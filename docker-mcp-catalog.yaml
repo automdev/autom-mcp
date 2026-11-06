@@ -1,0 +1,28 @@
+name: autom
+image: mcp/autom
+type: server
+meta:
+  category: search
+  tags:
+    - autom
+    - serp-api
+    - google-search-api
+    - search-api
+    - seo
+about:
+  title: Autom
+  description: Google, Bing and Brave search results as structured JSON — web, maps, news, shopping, images, jobs and AI Mode.
+  icon: https://raw.githubusercontent.com/automdev/autom-mcp/main/assets/icon-400.png
+source:
+  project: https://github.com/automdev/autom-mcp
+run:
+  allowHosts:
+    - api.autom.dev:443
+config:
+  description: Configure your Autom API key.
+  secrets:
+    - name: autom.api_key
+      env: AUTOM_API_KEY
+      example: YOUR_API_KEY
+      description: Required API key from https://app.autom.dev.
+      required: true
