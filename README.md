@@ -39,7 +39,7 @@ The hosted server and this package expose the same API; run the package locally 
 ### Claude Code
 
 ```sh
-claude mcp add autom --env AUTOM_API_KEY=YOUR_API_KEY -- npx -y @autom/mcp
+claude mcp add autom --env AUTOM_API_KEY=YOUR_API_KEY -- npx -y @automdev/mcp
 ```
 
 ### Claude Desktop, Cursor, Windsurf and other clients
@@ -51,7 +51,7 @@ Add the server to the client's MCP configuration (`claude_desktop_config.json`, 
   "mcpServers": {
     "autom": {
       "command": "npx",
-      "args": ["-y", "@autom/mcp"],
+      "args": ["-y", "@automdev/mcp"],
       "env": {
         "AUTOM_API_KEY": "YOUR_API_KEY"
       }
@@ -68,7 +68,7 @@ Add the server to the client's MCP configuration (`claude_desktop_config.json`, 
     "autom": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@autom/mcp"],
+      "args": ["-y", "@automdev/mcp"],
       "env": {
         "AUTOM_API_KEY": "${input:autom-api-key}"
       }
@@ -128,7 +128,7 @@ Every tool that calls the API consumes credits. JSON results are returned as tex
 ## Streamable HTTP
 
 ```sh
-npx @autom/mcp --http --port 3000
+npx @automdev/mcp --http --port 3000
 ```
 
 The endpoint is `POST /mcp` (stateless, JSON responses). Each client sends its own key in the `x-api-key` header (or `Authorization: Bearer <key>`); the server never uses a key of its own. It binds to `127.0.0.1` by default and rejects browser origins unless you allow them — put it behind TLS before exposing it.
@@ -136,7 +136,7 @@ The endpoint is `POST /mcp` (stateless, JSON responses). Each client sends its o
 `createHttpHandler()` is exported for Fetch-compatible runtimes (Cloudflare Workers, Deno, Bun):
 
 ```ts
-import { createHttpHandler } from "@autom/mcp";
+import { createHttpHandler } from "@automdev/mcp";
 
 export default { fetch: createHttpHandler({ allowedOrigins: [] }) };
 ```
@@ -158,7 +158,7 @@ npx @modelcontextprotocol/inspector node dist/stdio.js
 
 ## Built on the SDK
 
-The server uses the official [Node.js SDK](https://github.com/automdev/autom-node) (`@autom/sdk`).
+The server uses the official [Node.js SDK](https://github.com/automdev/autom-node) (`@automdev/sdk`).
 
 ## License
 
