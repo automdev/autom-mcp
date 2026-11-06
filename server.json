@@ -12,7 +12,7 @@
   "packages": [
     {
       "registryType": "npm",
-      "identifier": "@autom/mcp",
+      "identifier": "@automdev/mcp",
       "version": "0.1.0",
       "environmentVariables": [
         {

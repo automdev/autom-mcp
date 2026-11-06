@@ -9,5 +9,5 @@ Inspect the tools without an AI client:
 
 ```sh
 export AUTOM_API_KEY="YOUR_API_KEY"
-npx @modelcontextprotocol/inspector npx -y @autom/mcp
+npx @modelcontextprotocol/inspector npx -y @automdev/mcp
 ```

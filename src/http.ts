@@ -1,5 +1,5 @@
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
-import { AutomClient, type AutomClientOptions } from "@autom/sdk";
+import { AutomClient, type AutomClientOptions } from "@automdev/sdk";
 
 import { createAutomMcpServer, type ToolClient } from "./server.js";
 

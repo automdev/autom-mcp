@@ -4,7 +4,7 @@ import {
   AutomError,
   AutomSerializationError,
   type ApiResponse,
-} from "@autom/sdk";
+} from "@automdev/sdk";
 
 import { redact } from "./redaction.js";
 

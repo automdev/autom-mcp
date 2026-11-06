@@ -27,7 +27,7 @@ Or run it locally over stdio:
   "mcpServers": {
     "autom": {
       "command": "npx",
-      "args": ["-y", "@autom/mcp"],
+      "args": ["-y", "@automdev/mcp"],
       "env": {
         "AUTOM_API_KEY": "YOUR_API_KEY"
       }

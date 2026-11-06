@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
-import type { AutomClient } from "@autom/sdk";
+import type { AutomClient } from "@automdev/sdk";
 import { z } from "zod";
 
 import { CATALOG, MODE } from "./catalog.js";

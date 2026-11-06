@@ -2,7 +2,7 @@
 import process from "node:process";
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { AutomClient } from "@autom/sdk";
+import { AutomClient } from "@automdev/sdk";
 
 import { redact } from "./redaction.js";
 import { createAutomMcpServer } from "./server.js";
