@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.autom/mcp",
+  "title": "Autom",
+  "description": "Google, Bing and Brave search results as structured JSON — web, maps, news, shopping, images, jobs…",
+  "version": "0.1.0",
+  "websiteUrl": "https://www.autom.dev",
+  "repository": {
+    "url": "https://github.com/automdev/autom-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@autom/mcp",
+      "version": "0.1.0",
+      "environmentVariables": [
+        {
+          "name": "AUTOM_API_KEY",
+          "description": "Autom API key.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.autom.dev/",
+      "headers": [
+        {
+          "name": "x-api-key",
+          "description": "Autom API key.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

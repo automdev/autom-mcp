@@ -1,0 +1,148 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/mcpb/main/schemas/mcpb-manifest-v0.4.schema.json",
+  "manifest_version": "0.4",
+  "name": "autom-mcp",
+  "display_name": "Autom",
+  "version": "0.1.0",
+  "description": "Autom SERP API for Claude.",
+  "long_description": "Google, Bing and Brave search results as structured JSON — web, maps, news, shopping, images, jobs and AI Mode.",
+  "author": {
+    "name": "Autom",
+    "email": "contact@autom.dev",
+    "url": "https://www.autom.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/automdev/autom-mcp"
+  },
+  "homepage": "https://www.autom.dev",
+  "documentation": "https://github.com/automdev/autom-mcp#readme",
+  "support": "mailto:contact@autom.dev",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/dist/stdio.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/dist/stdio.js"],
+      "env": {
+        "AUTOM_API_KEY": "${user_config.AUTOM_API_KEY}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "bing_search",
+      "description": "Query Bing Search via API and retrieve structured organic results (title, link, snippet, position)."
+    },
+    {
+      "name": "brave_images",
+      "description": "Search Brave Images via API and retrieve structured image results with pagination and SafeSearch."
+    },
+    {
+      "name": "brave_search",
+      "description": "Search Brave Search via API and retrieve structured organic results with pagination."
+    },
+    {
+      "name": "brave_videos",
+      "description": "Search Brave Videos via API and retrieve structured video results with pagination and SafeSearch."
+    },
+    {
+      "name": "duckduckgo_search",
+      "description": "Query DuckDuckGo via API and retrieve structured organic results with region and language."
+    },
+    {
+      "name": "finder_google_countries",
+      "description": "Search Google countries and retrieve country codes (free Finder endpoint)."
+    },
+    {
+      "name": "finder_google_languages",
+      "description": "Search Google languages and retrieve language codes (free Finder endpoint)."
+    },
+    {
+      "name": "finder_google_locations",
+      "description": "Find supported Google locations and retrieve location IDs and country codes (free endpoint)."
+    },
+    {
+      "name": "google_images",
+      "description": "Search Google Images via API and retrieve image results (URLs, titles, sources, dimensions)."
+    },
+    {
+      "name": "google_jobs",
+      "description": "Scrape Google Jobs results via API and retrieve structured job listings with title, company, location, and pagination."
+    },
+    {
+      "name": "google_maps",
+      "description": "Search Google Maps via API and retrieve structured place results (address, website, phone)."
+    },
+    {
+      "name": "google_news",
+      "description": "Search Google News via API and retrieve structured news results with pagination."
+    },
+    {
+      "name": "google_search",
+      "description": "Scrape Google Search results via API and retrieve structured SERP data with pagination."
+    },
+    {
+      "name": "google_search_ai",
+      "description": "Query Google AI Mode via API. JSON with text_blocks, references, and shopping_results."
+    },
+    {
+      "name": "google_search_autocomplete",
+      "description": "Get Google Search autocomplete suggestions via API for a given query."
+    },
+    {
+      "name": "google_search_light",
+      "description": "Scrape lightweight Google Search results via API: fast, cost-efficient, organic results only."
+    },
+    {
+      "name": "google_shopping",
+      "description": "Scrape Google Shopping results via API and retrieve structured product listings with prices, ratings, and merchant data."
+    },
+    {
+      "name": "google_videos",
+      "description": "Search Google Videos via API and retrieve structured video results with metadata."
+    },
+    {
+      "name": "search",
+      "description": "One call walks engines in order and returns the first organic results. engines=auto tries Google, then Brave, Bing, DuckDuckGo, Yahoo, and Baidu. Omitted gl is us and omitted hl is en. There is no pa…"
+    },
+    {
+      "name": "stats",
+      "description": "Infrastructure health for an engine or endpoint over the last hour. Not scoped to your account or tenant. Enabled per account: HTTP 403 means contact support to activate it."
+    },
+    {
+      "name": "usage",
+      "description": "Retrieve real-time usage statistics and credit balance for your Autom account."
+    },
+    {
+      "name": "yahoo_search",
+      "description": "Query Yahoo via API and retrieve structured organic results with country and language."
+    }
+  ],
+  "tools_generated": false,
+  "keywords": [
+    "mcp",
+    "autom",
+    "serp-api",
+    "google-search-api",
+    "search-api",
+    "seo"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=20"
+    }
+  },
+  "user_config": {
+    "AUTOM_API_KEY": {
+      "type": "string",
+      "title": "Autom API key",
+      "description": "Your API key from https://app.autom.dev.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}
